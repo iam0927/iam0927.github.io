@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[博学谷项目]]></title>
+    <url>%2F2017%2F10%2F11%2F%E5%8D%9A%E5%AD%A6%E8%B0%B7%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[博学谷项目搭建流程 博学谷项目从源码到项目搭建到上线 1 确定文件目录被大家认可的目录 ：src 存放源码，dist ： 存放项目上线的代码 2 下载所需插件根据package.json中来下载所需的插件和环境 下载所需js插件，比如jquery 1$ npm install --save jquery 首先，所有的源码编译需要gulp进行操作 1$ npm install --save-dev gulp 下载所需编译less和压缩css的gulp-less和gulp-csso插件 1$ npm install --save-dev gulp-less gulp-csso 下载压缩js的gulp-uglify插件 1$ npm install --save-dev gulp-uglify 下载压缩图片的gulp-imagemin插件 1$ npm install --save-dev gulp-imagemin 下载替换html公共部分的引擎模板插件nunjucks 1$ npm install --save-dev gulp-nunjucks 下载开启本地页面自动刷新页面的插件browser-sync 1$ npm install --save-dev browser-sync 下载跨域请求http-proxy-middleware插件 1$ npm install --save-dev http-proxy-middleware 下载合并html文件的gulp-useref插件 1$ npm install --save-dev gulp-useref gulp-imagemin压缩失败解决方案 3 编译less文件并进行压缩使用gulp-less插件进行编译12345var gulp = require("gulp");var less = require("gulp-less");gulp.task("less",function () &#123; gulp.src("./src/less/*.less").pipe(less()).pipe(cssMinify()).pipe(gulp.dest("./dist/css"))&#125;) 4 使用requireJs对Js进行合并基本语法123456requirejs([],function()&#123;&#125;);define([],function()&#123; &#125;) 5 压缩图片12var imagemin = require("gulp-imagemin");gulp.task("./src/img/*",&#123;base:"./src"&#125;).pipe(imagemin()).pipe(gulp.dest("./dist")); 6 合并公共html 首先在合并之前进行公共模板样式 在src目录下新建 _layouts 文件夹进行存放公共模板部分的html 并且在 1 gulp-nunjucks语法 需要替换的部分语法 1&#123;&#123;% incloude "./dist/*.html" %&#125;&#125; 继承模板extends的语法 1&#123;% extends "./src/_layouts/base.htmls" %&#125; 使用block语法进行预留位置，将需要添加的内容添加到该位置 12&#123;&#123;% block body %&#125;&#125;&#123;&#123;% enblock %&#125;&#125;/- body是说明添加的位置-/]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[搭建了一天的hexo个人博客]]></title>
+    <url>%2F2017%2F10%2F08%2F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[开始搭建 从开始搭建到这个博客的上线，其实还是挺容易的，用了半天，看了视频，一会就完成了，只不过用默认主题是有点不喜欢，想自个倒腾一下，结果，一倒腾就是一下午。。。。 关于主题的一点想法 还是需要一点时间的，自己摸索还是能出来的，本来想直接做伸手党，但是一下午几乎所有的时间都花在这个上面了，修改了所有大牛的主题，就是配置不好，毕竟前端小学生一枚，而且做伸手党拿来的，怎么改也没有自己预期的效果，与其这样，这件事情还是搁一搁，有时间慢慢来吧 写到最后 这是第一篇博客，希望可以一直写下去。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F10%2F08%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
