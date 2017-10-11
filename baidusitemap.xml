@@ -4,37 +4,45 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/11/%E5%8D%9A%E5%AD%A6%E8%B0%B7%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2017-10-11T12:41:08.827Z</lastmod>
-    <data>
-        <display>
-        <title>博学谷项目</title>
-        <pubTime>2017-10-11T09:01:51.715Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-  <url>
     <loc>http://yoursite.com/2017/10/08/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2017-10-08T15:30:59.925Z</lastmod>
+    <lastmod>2017-10-11T13:46:24.606Z</lastmod>
     <data>
         <display>
         <title>搭建了一天的hexo个人博客</title>
         <pubTime>2017-10-08T11:43:18.610Z</pubTime>
         
+        <tag>github</tag>
+         
+        <tag>hexo</tag>
+         
          
            
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/11/%E5%8D%9A%E5%AD%A6%E8%B0%B7%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2017-10-11T13:44:36.008Z</lastmod>
+    <data>
+        <display>
+        <title>博学谷项目</title>
+        <pubTime>2017-10-11T09:01:51.715Z</pubTime>
+        
+        <tag>gulp</tag>
+         
+        <tag>搭建</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
     
     
   <url>
