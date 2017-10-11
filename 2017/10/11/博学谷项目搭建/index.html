@@ -12,12 +12,12 @@
 <meta property="og:site_name" content="HeiHei呼哈的碎碎念~~~">
 <meta property="og:description" content="博学谷项目搭建流程  博学谷项目从源码到项目搭建到上线   1 确定文件目录被大家认可的目录 ：src 存放源码，dist ： 存放项目上线的代码 2 下载所需插件根据package.json中来下载所需的插件和环境  下载所需js插件，比如jquery  1$ npm install --save jquery  首先，所有的源码编译需要gulp进行操作  1$ npm install --sa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2017/10/11/博学谷项目搭建/src/img/avatar.jpg">
-<meta property="og:updated_time" content="2017-10-11T09:00:47.754Z">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/博学谷项目搭建/Images/avatar.jpg">
+<meta property="og:updated_time" content="2017-10-11T09:06:11.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博学谷项目">
 <meta name="twitter:description" content="博学谷项目搭建流程  博学谷项目从源码到项目搭建到上线   1 确定文件目录被大家认可的目录 ：src 存放源码，dist ： 存放项目上线的代码 2 下载所需插件根据package.json中来下载所需的插件和环境  下载所需js插件，比如jquery  1$ npm install --save jquery  首先，所有的源码编译需要gulp进行操作  1$ npm install --sa">
-<meta name="twitter:image" content="http://yoursite.com/2017/10/11/博学谷项目搭建/src/img/avatar.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2017/10/11/博学谷项目搭建/Images/avatar.jpg">
   
     <link rel="alternate" href="/atom.xml" title="HeiHei呼哈的碎碎念~~~" type="application/atom+xml">
   
@@ -138,7 +138,7 @@
 <blockquote>
 <p><a href="http://www.circle.ink/gulp-imagemin-cai-keng-zhi-nan/" target="_blank" rel="external">gulp-imagemin压缩失败解决方案</a></p>
 </blockquote>
-<p><img src="./src/img/avatar.jpg" title="hah"></p>
+<p><img src="Images/avatar.jpg" title="hah"></p>
 <h2 id="3-编译less文件并进行压缩"><a href="#3-编译less文件并进行压缩" class="headerlink" title="3 编译less文件并进行压缩"></a>3 编译less文件并进行压缩</h2><p>使用gulp-less插件进行编译<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);</div><div class="line"><span class="keyword">var</span> less = <span class="built_in">require</span>(<span class="string">"gulp-less"</span>);</div><div class="line">gulp.task(<span class="string">"less"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.src(<span class="string">"./src/less/*.less"</span>).pipe(less()).pipe(cssMinify()).pipe(gulp.dest(<span class="string">"./dist/css"</span>))</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <h2 id="4-使用requireJs对Js进行合并"><a href="#4-使用requireJs对Js进行合并" class="headerlink" title="4 使用requireJs对Js进行合并"></a>4 使用requireJs对Js进行合并</h2><p>基本语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">requirejs([],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;);</div><div class="line">define([],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <h2 id="5-压缩图片"><a href="#5-压缩图片" class="headerlink" title="5 压缩图片"></a>5 压缩图片</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> imagemin = <span class="built_in">require</span>(<span class="string">"gulp-imagemin"</span>);</div><div class="line">gulp.task(<span class="string">"./src/img/*"</span>,&#123;<span class="attr">base</span>:<span class="string">"./src"</span>&#125;).pipe(imagemin()).pipe(gulp.dest(<span class="string">"./dist"</span>));</div></pre></td></tr></table></figure>
