@@ -4,30 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/11/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2017-10-11T15:56:07.996Z</lastmod>
-    <data>
-        <display>
-        <title>为我的博客添加音乐播放器</title>
-        <pubTime>2017-10-11T15:49:56.766Z</pubTime>
-        
-        <tag>音乐</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术交流" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
     <loc>http://yoursite.com/2017/10/11/%E5%8D%9A%E5%AD%A6%E8%B0%B7%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2017-10-11T13:56:39.517Z</lastmod>
+    <lastmod>2017-10-12T03:18:10.823Z</lastmod>
     <data>
         <display>
         <title>博学谷项目</title>
@@ -46,6 +24,28 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/11/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/</loc>
+    <lastmod>2017-10-12T03:17:32.125Z</lastmod>
+    <data>
+        <display>
+        <title>为我的博客添加音乐播放器</title>
+        <pubTime>2017-10-11T15:49:56.766Z</pubTime>
+        
+        <tag>音乐</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术交流" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
     
   <url>
     <loc>http://yoursite.com/2017/10/08/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
