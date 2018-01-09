@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://0927.red/2017/10/11/%E5%8D%9A%E5%AD%A6%E8%B0%B7%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://0927.red/2018/01/09/vue%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%981/</loc>
     
-    <lastmod>2017-10-12T09:54:34.046Z</lastmod>
+    <lastmod>2018-01-09T09:12:42.815Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://0927.red/about/index.html</loc>
+    
+    <lastmod>2018-01-09T08:00:30.791Z</lastmod>
     
   </url>
   
@@ -12,20 +19,6 @@
     <loc>http://0927.red/2017/10/11/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/</loc>
     
     <lastmod>2017-10-12T03:17:32.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://0927.red/about/index.html</loc>
-    
-    <lastmod>2017-10-11T15:54:40.399Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://0927.red/schedule/index.html</loc>
-    
-    <lastmod>2017-10-11T14:20:51.800Z</lastmod>
     
   </url>
   
@@ -47,13 +40,6 @@
     <loc>http://0927.red/tags/index.html</loc>
     
     <lastmod>2017-10-11T13:53:30.556Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://0927.red/2017/10/08/hello-world/</loc>
-    
-    <lastmod>2017-10-08T09:48:01.604Z</lastmod>
     
   </url>
   

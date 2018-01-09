@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vue知识点杂记1]]></title>
+    <url>%2F2018%2F01%2F09%2Fvue%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%981%2F</url>
+    <content type="text"><![CDATA[vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要 vue-cli生成的文件目录结构这里偷个懒，这个问题难不倒度娘，一搜一大把 static和assets文件夹有什么区别看过很多网上资料，都描述的一样：static下的文件不会被打包，而assets会被webpack打包。那么，什么样的文件放在assets，什么样的文件放在static中呢？ static中放那些npm中下载不到的第三方包，和不需要被编译打包的images和css或者js，这个看项目 assets中放会被编译打包的文件，比如webapp底部导航栏的图片，公共的common.css文件等等 我想使用less怎么办首先在style标签中添加lang=’less’属性，但是，在编译的时候会报错，这个地方呢就需要下载以下插件 12$ npm i less -D$ npm i less-loader -D 引用文件./和@/有什么区别 这个也很简单了./是相对路径，@/也是相对路径，但是起点是src文件夹，这个在build/webpack.base.conf.js中有设置1234567resolve: &#123; extensions: ['.js', '.vue', '.json'], alias: &#123; 'vue$': 'vue/dist/vue.esm.js', '@': resolve('src'), &#125; &#125; es6 import区别 import FunName from ‘../xxx’这个都知道，引入某个文件,文件里只有一个export default import {xxx} from ‘../xxx’ 这个呢被引入的文件中有许多个export import * as moment from ‘moment’; 这个呢是将moment文件中的所有变量都变成了一个名字为moment的对象，而moment文件中都是一个个变量 vue跨域当开发时难免脱离不了跨域，这个时候呢也有很多解决办法，相对省事一点的呢，可以按如下配置轻松解决跨域问题 第一步：在config/index.js中做如下设置 1234567891011121314dev: &#123; // Paths assetsSubDirectory: 'static', assetsPublicPath: '/', proxyTable: &#123; '/api': &#123; target: 'http://192.168.1.106', changeOrigin: true, pathRewrite: &#123; '^/api': '' &#125; &#125; &#125;, 以上就是在dev下的proxyTable中添加了一段代理代码，将target替换为自己的后端接口即可 第二步 在axios请求时 1234567this.$axios.get('/api/test/data.json') .then(res =&gt; &#123; console.log(res) &#125;) .catch(err =&gt; &#123; console.log(err) &#125;) 和我们得ajax做法一样，怎么样，很简单是吧，但是，这一步有坑哦 什么坑 在解决之前，我们先说一下proxyTable的原理其实在上面的’api’的参数里有一个changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。那有同学就问了，那我要上线部署时，这个方法还适用吗？别急，马上说 第三步 下载依赖插件 再说了原理后，我们知道了，其实就是使用了代理，这时候我们还是不能进行跨域请求，而且webpack还会报错，能看懂报错原因的已经知道缺少什么插件了，看不懂的呢，我就讲一下，执行以下操作，就ok啦 1$ npm i http-proxy-middleware -D 当然，记得重启服务哦 项目打包后路径报错很多同学在项目打包后会出现图片等资源路径报错情况，当然呢， 第一，在config/index.js下做如下配置 1assetsPublicPath: './' 这里默认为’/‘，我们在前面加’.’就行了，那么为什么加点就解决了呢，原因啊，就是不加点表示的是绝对路径，加了点后就是相对路径啦 第二，css文件中背景图地址错误 这个是因为在开发的时候我们引用路径是以当前文件来引用的，而build打包后文件位置发生了变化，所以路径就不对啦，我们只需要在build/utils.js做如下配置就ok 12345return ExtractTextPlugin.extract(&#123; use: loaders, fallback: 'vue-style-loader', publicPath: '../../' &#125;) 还没找到吗？就是在fallback后加入publicPath: ‘../../‘ 那么最后一个，就是开发时候我用了代理来进行跨域，可是我部署上线的时候疯狂报错，怎么办呢这个问题，来自于我们执行了npm run dev,而我们上线部署执行的是npm run build,所以，代理操作就只能在dev下起作用了，那么如何解决呢 第一种，就是在npm run dev 之前手动将所有的url地址前的api删掉，很明显，这种方法在axios请求多的时候是不可取的 第二种就是使用nginx反向代理，当然如何设置请自行百度，为什么没放配置方法？因为我用的第三种]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>问题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[为我的博客添加音乐播放器]]></title>
     <url>%2F2017%2F10%2F11%2F%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%2F</url>
     <content type="text"><![CDATA[为我的博客添加音乐播放器-效果如上所示，感觉蛮不错的]]></content>
@@ -9,18 +21,6 @@
       </categories>
       <tags>
         <tag>音乐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[博学谷项目]]></title>
-    <url>%2F2017%2F10%2F11%2F%E5%8D%9A%E5%AD%A6%E8%B0%B7%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%2F</url>
-    <content type="text"><![CDATA[博学谷项目搭建流程 博学谷项目从源码到项目搭建到上线 1 确定文件目录被大家认可的目录 ：src 存放源码，dist ： 存放项目上线的代码 2 下载所需插件根据package.json中来下载所需的插件和环境 下载所需js插件，比如jquery 1$ npm install --save jquery 首先，所有的源码编译需要gulp进行操作 1$ npm install --save-dev gulp 下载所需编译less和压缩css的gulp-less和gulp-csso插件 1$ npm install --save-dev gulp-less gulp-csso 下载压缩js的gulp-uglify插件 1$ npm install --save-dev gulp-uglify 下载压缩图片的gulp-imagemin插件 1$ npm install --save-dev gulp-imagemin 下载替换html公共部分的引擎模板插件nunjucks 1$ npm install --save-dev gulp-nunjucks 下载开启本地页面自动刷新页面的插件browser-sync 1$ npm install --save-dev browser-sync 下载跨域请求http-proxy-middleware插件 1$ npm install --save-dev http-proxy-middleware 下载合并html文件的gulp-useref插件 1$ npm install --save-dev gulp-useref gulp-imagemin压缩失败解决方案 3 编译less文件并进行压缩使用gulp-less插件进行编译12345var gulp = require("gulp");var less = require("gulp-less");gulp.task("less",function () &#123; gulp.src("./src/less/*.less").pipe(less()).pipe(cssMinify()).pipe(gulp.dest("./dist/css"))&#125;) 4 使用requireJs对Js进行合并基本语法123456requirejs([],function()&#123;&#125;);define([],function()&#123; &#125;) 5 压缩图片12var imagemin = require("gulp-imagemin");gulp.task("./src/img/*",&#123;base:"./src"&#125;).pipe(imagemin()).pipe(gulp.dest("./dist")); 6 合并公共html 首先在合并之前进行公共模板样式 在src目录下新建 _layouts 文件夹进行存放公共模板部分的html 并且在 1 gulp-nunjucks语法 需要替换的部分语法 1&#123;&#123;% incloude "./dist/*.html" %&#125;&#125; 继承模板extends的语法 1&#123;% extends "./src/_layouts/base.htmls" %&#125; 使用block语法进行预留位置，将需要添加的内容添加到该位置 12&#123;&#123;% block body %&#125;&#125;&#123;&#123;% enblock %&#125;&#125;/- body是说明添加的位置-/]]></content>
-      <categories>
-        <category>项目构建</category>
-      </categories>
-      <tags>
-        <tag>gulp</tag>
-        <tag>搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -34,10 +34,5 @@
         <tag>github</tag>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F10%2F08%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
