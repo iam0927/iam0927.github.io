@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要 vue-cli生成的文件目录结构这里偷">
+<meta name="description" content="vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要">
 <meta name="keywords" content="vue,跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue问题杂记">
 <meta property="og:url" content="http://0927.red/2018/01/09/vue碰到的问题1/index.html">
 <meta property="og:site_name" content="HeiHei呼哈的碎碎念~~~">
-<meta property="og:description" content="vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要 vue-cli生成的文件目录结构这里偷">
+<meta property="og:description" content="vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-09T09:42:34.503Z">
+<meta property="og:updated_time" content="2018-01-09T09:44:22.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue问题杂记">
-<meta name="twitter:description" content="vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要 vue-cli生成的文件目录结构这里偷">
+<meta name="twitter:description" content="vue一些问题解决办法vue全家桶vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios 搭建项目相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要">
 
 
 
@@ -378,6 +378,7 @@
       
         <h1 id="vue一些问题解决办法"><a href="#vue一些问题解决办法" class="headerlink" title="vue一些问题解决办法"></a>vue一些问题解决办法</h1><h2 id="vue全家桶"><a href="#vue全家桶" class="headerlink" title="vue全家桶"></a>vue全家桶</h2><p>vue全家桶包括ue-cli、vuex、vue-router和vue-resource，但是呢vue-resource在2.0之后作者已经不再更行，作者推荐使用axios</p>
 <h2 id="搭建项目"><a href="#搭建项目" class="headerlink" title="搭建项目"></a>搭建项目</h2><p>相信这一点都可以会，vue-cli一步搞定，但是呢其中有一个ESlint大家初学都不会去选，个人建议能选就选，对于养成一个良好的代码书写习惯很重要</p>
+<a id="more"></a>
 <h2 id="vue-cli生成的文件目录结构"><a href="#vue-cli生成的文件目录结构" class="headerlink" title="vue-cli生成的文件目录结构"></a>vue-cli生成的文件目录结构</h2><p>这里偷个懒，这个问题难不倒度娘，一搜一大把</p>
 <h2 id="static和assets文件夹有什么区别"><a href="#static和assets文件夹有什么区别" class="headerlink" title="static和assets文件夹有什么区别"></a>static和assets文件夹有什么区别</h2><p>看过很多网上资料，都描述的一样：static下的文件不会被打包，而assets会被webpack打包。那么，什么样的文件放在assets，什么样的文件放在static中呢？</p>
 <ul>
@@ -388,7 +389,7 @@
 </ul>
 <h2 id="我想使用less怎么办"><a href="#我想使用less怎么办" class="headerlink" title="我想使用less怎么办"></a>我想使用less怎么办</h2><p>首先在style标签中添加lang=’less’属性，但是，在编译的时候会报错，这个地方呢就需要下载以下插件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm i less -D</div><div class="line">$ npm i less-loader -D</div></pre></td></tr></table></figure>
-<h2 id="引用文件-和-有什么区别"><a href="#引用文件-和-有什么区别" class="headerlink" title="引用文件./和@/有什么区别"></a>引用文件./和@/有什么区别</h2><p>这个也很简单了./是相对路径，@/也是相对路径，但是起点是src文件夹，这个在build/webpack.base.conf.js中有设置<br><a id="more"></a></p>
+<h2 id="引用文件-和-有什么区别"><a href="#引用文件-和-有什么区别" class="headerlink" title="引用文件./和@/有什么区别"></a>引用文件./和@/有什么区别</h2><p>这个也很简单了./是相对路径，@/也是相对路径，但是起点是src文件夹，这个在build/webpack.base.conf.js中有设置</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">    extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</div><div class="line">    alias: &#123;</div><div class="line">      <span class="string">'vue$'</span>: <span class="string">'vue/dist/vue.esm.js'</span>,</div><div class="line">      <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <h2 id="es6-import区别"><a href="#es6-import区别" class="headerlink" title="es6 import区别"></a>es6 import区别</h2><ul>
 <li>import FunName from ‘../xxx’这个都知道，引入某个文件,文件里只有一个export default</li>
