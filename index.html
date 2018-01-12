@@ -378,8 +378,7 @@
 
       
         
-          
-            <h2 id="vue跨域"><a href="#vue跨域" class="headerlink" title="vue跨域"></a>vue跨域</h2><p>当开发时难免脱离不了跨域，这个时候呢也有很多解决办法，相对省事一点的呢，可以按如下配置轻松解决跨域问题</p>
+          <h2 id="vue跨域"><a href="#vue跨域" class="headerlink" title="vue跨域"></a>vue跨域</h2><p>当开发时难免脱离不了跨域，这个时候呢也有很多解决办法，相对省事一点的呢，可以按如下配置轻松解决跨域问题</p>
 <ul>
 <li>第一步：在config/index.js中做如下设置</li>
 </ul>
@@ -390,27 +389,13 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$axios.get(<span class="string">'/api/test/data.json'</span>)</div><div class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(res)</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(err)</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
 <p>和我们得ajax做法一样，怎么样，很简单是吧，但是，这一步有坑哦</p>
-<ul>
-<li>什么坑</li>
-</ul>
-<p>在解决之前，我们先说一下proxyTable的原理<br>其实在上面的’api’的参数里有一个changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。<br>那有同学就问了，那我要上线部署时，这个方法还适用吗？别急，马上说</p>
-<ul>
-<li>第三步 下载依赖插件</li>
-</ul>
-<p>再说了原理后，我们知道了，其实就是使用了代理，这时候我们还是不能进行跨域请求，而且webpack还会报错，能看懂报错原因的已经知道缺少什么插件了，看不懂的呢，我就讲一下，执行以下操作，就ok啦</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i http-proxy-middleware -D</div></pre></td></tr></table></figure>
-<p>当然，记得重启服务哦</p>
-<h2 id="那么最后一个，就是开发时候我用了代理来进行跨域，可是我部署上线的时候疯狂报错，怎么办呢"><a href="#那么最后一个，就是开发时候我用了代理来进行跨域，可是我部署上线的时候疯狂报错，怎么办呢" class="headerlink" title="那么最后一个，就是开发时候我用了代理来进行跨域，可是我部署上线的时候疯狂报错，怎么办呢"></a>那么最后一个，就是开发时候我用了代理来进行跨域，可是我部署上线的时候疯狂报错，怎么办呢</h2><p>这个问题，来自于我们执行了npm run dev,而我们上线部署执行的是npm run build,所以，代理操作就只能在dev下起作用了，那么如何解决呢</p>
-<ul>
-<li><p>第一种，就是在npm run build 之前手动将所有的url地址前的api删掉，很明显，这种方法在axios请求多的时候是不可取的</p>
-</li>
-<li><p>第二种就是使用nginx反向代理，当然如何设置请自行百度，为什么没放配置方法？因为我用的第三种</p>
-</li>
-<li><p>第三种就是在项目判断是dev环境还是build环境，然后进行区别api的值就ok啦，是不是特别简单呢</p>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/12/03_vue跨域/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
