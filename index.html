@@ -53,7 +53,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -329,7 +329,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">编辑于</span>
-        <time title="更新于：2021-07-21 21:55:55" itemprop="dateModified" datetime="2021-07-21T21:55:55+08:00">2021-07-21</time>
+        <time title="更新于：2021-07-21 22:18:59" itemprop="dateModified" datetime="2021-07-21T22:18:59+08:00">2021-07-21</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -360,12 +360,14 @@
 </ul>
 <h4 id="手写一个apply"><a href="#手写一个apply" class="headerlink" title="手写一个apply"></a>手写一个apply</h4><p>apply 方法接受this指向和一个数组</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_apply</span>(<span class="params">context, arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> context = context || windown</span><br><span class="line">  context.fn = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">var</span> res;</span><br><span class="line">  <span class="keyword">if</span> (arg) &#123;</span><br><span class="line">    <span class="keyword">var</span> argArr = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; arg.length; i++) &#123;</span><br><span class="line">      argArr.push(<span class="string">&#x27;arg[&#x27;</span> + i + <span class="string">&#x27;]&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    res = <span class="built_in">eval</span>(<span class="string">&#x27;context.fn(&#x27;</span>+ argArr +<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    res = context.fn()</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="手写一个call"><a href="#手写一个call" class="headerlink" title="手写一个call"></a>手写一个call</h4><p>call 方法接受的是每一个项</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_call</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> context = context || <span class="built_in">window</span></span><br><span class="line">  context.fn = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">var</span> argArr = []</span><br><span class="line">  <span class="keyword">var</span> res</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">    argArr.push(<span class="string">&#x27;arguments[&#x27;</span>+i+<span class="string">&#x27;]&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"> res = <span class="built_in">eval</span>(<span class="string">&#x27;context.fn()&#x27;</span>)</span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="手写一个bind"><a href="#手写一个bind" class="headerlink" title="手写一个bind"></a>手写一个bind</h4><p>实现方法是给目标函数绑定作用域来实现bind方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_bind</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice</span><br><span class="line">  <span class="keyword">var</span> args = slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>) <span class="comment">// 转换为数组，并返回第一个以外的元素</span></span><br><span class="line">  <span class="keyword">var</span> self = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> self.apply(context, args.concat(slice.call(<span class="built_in">arguments</span>)))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/20/js%E4%B8%AD%E7%9A%84this/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -660,7 +662,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="الصفحة التالية"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
